@@ -8,6 +8,7 @@ import type { ClaveMetrica, Metricas, Recomendacion, Resumen } from './tipos'
 const NARANJA = '#FB4F14'
 const NEGRO = '#111111'
 const GRIS = '#9CA3AF'
+const ROJO = '#B91C1C'
 
 const DOWNS = ['Todos', '1st', '2nd', '3rd'] as const
 const DISTANCIAS = ['Todas', 'Corto', 'Medio', 'Largo'] as const
@@ -139,6 +140,10 @@ function FilaMetricas({ m }: { m: Metricas }) {
 
 // ---------- Recomendador ----------
 
+const textoDown = (d: string) => (d === 'Todos' ? 'Todos los downs' : `${d} down`)
+const textoDistancia = (d: string) =>
+  ({ Todas: 'todas las distancias', Corto: 'distancia corta', Medio: 'distancia media', Largo: 'distancia larga' })[d] ?? d
+
 function Recomendador() {
   const [down, setDown] = useState<(typeof DOWNS)[number]>('Todos')
   const [distancia, setDistancia] = useState<(typeof DISTANCIAS)[number]>('Todas')
@@ -203,7 +208,7 @@ function Recomendador() {
           </div>
 
           <div>
-            <p className="mb-2 text-sm font-semibold">Situación seleccionada ({down} down, distancia {distancia.toLowerCase()})</p>
+            <p className="mb-2 text-sm font-semibold">Situación seleccionada ({textoDown(down)}, {textoDistancia(distancia)})</p>
             <FilaMetricas m={rec.situacion} />
           </div>
 
@@ -320,12 +325,15 @@ function GraficaFormaciones({ resumen }: { resumen: Resumen }) {
 function GraficaDefensa({ resumen }: { resumen: Resumen }) {
   const [metrica, setMetrica] = useState<ClaveMetrica>('yardasPorJugada')
   const colores: Record<string, string> = {
-    Blitz: NARANJA, 'Sin blitz': GRIS, Hombre: NARANJA, Zona: GRIS, 'Con presión': NARANJA, 'Sin presión': GRIS,
+    Blitz: NARANJA, 'Sin blitz': GRIS, Hombre: NARANJA, Zona: GRIS, 'Con presión': ROJO, 'Sin presión': GRIS,
   }
   const datos = resumen.defensa.map((d) => ({ nombre: `${d.grupo} (${d.jugadas})`, grupo: d.grupo, valor: d[metrica] }))
   const fmt = etiqueta(metrica)
   return (
     <Tarjeta titulo="2 · Fortalezas de Burrow frente a la defensa" extra={<SelectorMetrica valor={metrica} onChange={setMetrica} />}>
+      <p className="-mt-2 mb-3 text-sm text-gray-600">
+        Rinde mejor contra blitz y cobertura hombre (más de 10 yardas por jugada), pero bajo presión cae a 3.2 yardas y 23.8% de sacks.
+      </p>
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={datos} margin={{ top: 20, right: 10, left: 0, bottom: 5 }}>
@@ -374,7 +382,7 @@ function GraficaTiempo({ resumen }: { resumen: Resumen }) {
                 <YAxis tickFormatter={seg2} />
                 <Tooltip formatter={seg2} />
                 <Bar dataKey="promedio" name="Promedio">
-                  {porResultado.map((r) => <Cell key={r.resultado} fill={r.resultado === 'S' ? '#B91C1C' : r.resultado === 'C' ? NARANJA : GRIS} />)}
+                  {porResultado.map((r) => <Cell key={r.resultado} fill={r.resultado === 'S' ? ROJO : r.resultado === 'C' ? NARANJA : GRIS} />)}
                   <LabelList dataKey="promedio" position="top" formatter={seg2} />
                 </Bar>
               </BarChart>
@@ -385,16 +393,28 @@ function GraficaTiempo({ resumen }: { resumen: Resumen }) {
           <p className="mb-2 text-sm font-semibold">Qué pasa según cuánto tarda en soltar</p>
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
-              <ComposedChart data={porTramo} margin={{ top: 20, right: 10, left: 0, bottom: 5 }}>
+              <ComposedChart data={porTramo} margin={{ top: 20, right: 20, left: 10, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} />
                 <XAxis dataKey="tramo" tick={{ fontSize: 11 }} />
-                <YAxis yAxisId="pct" tickFormatter={pct0} domain={[0, 100]} />
-                <YAxis yAxisId="yds" orientation="right" />
-                <Tooltip formatter={(v: unknown, n: unknown) => (n === 'Yardas por jugada' && typeof v === 'number' ? v.toFixed(2) : pct0(v))} />
+                <YAxis
+                  yAxisId="pct" tickFormatter={pct0} domain={[0, 100]}
+                  label={{ value: 'Porcentaje (%)', angle: -90, position: 'insideLeft', style: { textAnchor: 'middle', fontSize: 12 } }}
+                />
+                <YAxis
+                  yAxisId="yds" orientation="right"
+                  label={{ value: 'Yardas / jugada', angle: 90, position: 'insideRight', style: { textAnchor: 'middle', fontSize: 12 } }}
+                />
+                <Tooltip
+                  labelFormatter={(l: unknown) => `Tiempo hasta lanzar: ${String(l).replace(/\((\d+)\)/, '($1 jugadas)')}`}
+                  formatter={(v: unknown, n: unknown) =>
+                    n === 'Yardas por jugada'
+                      ? (typeof v === 'number' ? `${v.toFixed(2)} yardas` : '—')
+                      : (typeof v === 'number' ? `${v.toFixed(1)}% de las jugadas` : '—')}
+                />
                 <Legend />
                 <Bar yAxisId="yds" dataKey="yardas" name="Yardas por jugada" fill={NEGRO} />
                 <Line yAxisId="pct" dataKey="completos" name="% completos" stroke={NARANJA} strokeWidth={3} />
-                <Line yAxisId="pct" dataKey="sacks" name="% sacks" stroke="#B91C1C" strokeWidth={3} />
+                <Line yAxisId="pct" dataKey="sacks" name="% sacks" stroke={ROJO} strokeWidth={3} />
               </ComposedChart>
             </ResponsiveContainer>
           </div>
