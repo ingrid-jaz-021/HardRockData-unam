@@ -405,3 +405,117 @@ computing gzip size...
 LISTO. Sube este archivo:
   C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\entrega-HardRockData-unam-20261120-1152.zip
 11:53:51 FIN con código de salida 0
+
+===== setup 2026-11-20 12:11:00 =====
+12:11:00 Sistema detectado: windows x64  |  Python del arranque: 3.12.12
+12:11:00 MODO: check  |  versión del script: 2026-11-16  |  argumentos: --check
+12:11:00 SISTEMA: Windows-11-10.0.26300-SP0  |  detectado: windows x64  |  versión: 10.0.26300
+12:11:00 WINDOWS: build 26300  |  administrador: False
+12:11:00 PYTHON: 3.12.12 (C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.venv\Scripts\python.exe)
+12:11:00 USUARIO: ingri  |  carpeta actual: C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam
+12:11:00 PROYECTO: C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam  |  largo de ruta: 70  |  espacios: True  |  no ASCII: False
+12:11:00 DISCO LIBRE: 138.9 GB
+12:11:00 PROXY: ninguno
+12:11:00 Proyecto: C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam
+12:11:00 
+Validando (no se descarga ni instala nada)...
+12:11:02 $ C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.hackathon\.tools\uv\uv.exe pip check --python C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.venv\Scripts\python.exe
+12:11:02 Checked 57 packages in 41ms
+All installed packages are compatible
+12:11:02 $ C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.venv\Scripts\python.exe -c import pandas, numpy, fastapi, uvicorn, pydantic, strands, boto3, httpx
+12:11:08 
+12:11:08   Pieza              Esperado                            Encontrado      Estado
+12:11:08   -----------------  ----------------------------------  --------------  ------
+12:11:08   uv                 0.11.19                             0.11.19         OK    
+12:11:08   Python (.venv)     3.12.12                             3.12.12         OK    
+12:11:08   Node               v22.23.1                            v22.23.1        OK    
+12:11:08   npm                10.x                                10.9.8          OK    
+12:11:08   Paquetes Python    9 fijos                             9 coinciden     OK    
+12:11:08   Paquetes npm       12 fijos                            12 coinciden    OK    
+12:11:08   pip check          sin conflictos                      sin conflictos  OK    
+12:11:08   Importar paquetes  pandas, fastapi, pydantic, strands  importan        OK    
+12:11:08 
+Revisando desviaciones del stack...
+12:11:08 $ C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.venv\Scripts\python.exe -c import backend.main as m;assert hasattr(m,'app'), 'APP';assert any(getattr(r,'path','')=='/health' for r in m.app.routes), 'HEALTH'
+12:11:11 
+12:11:11     El proyecto sigue el stack del evento
+12:11:11 
+RESULTADO: TODO OK, puedes entregar.
+12:11:11 FIN con código de salida 0
+
+===== setup 2026-11-20 12:12:46 =====
+12:12:46 Sistema detectado: windows x64  |  Python del arranque: 3.12.12
+12:12:46 MODO: entregar  |  versión del script: 2026-11-16  |  argumentos: --entregar
+12:12:46 SISTEMA: Windows-11-10.0.26300-SP0  |  detectado: windows x64  |  versión: 10.0.26300
+12:12:46 WINDOWS: build 26300  |  administrador: False
+12:12:46 PYTHON: 3.12.12 (C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.venv\Scripts\python.exe)
+12:12:46 USUARIO: ingri  |  carpeta actual: C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam
+12:12:46 PROYECTO: C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam  |  largo de ruta: 70  |  espacios: True  |  no ASCII: False
+12:12:46 DISCO LIBRE: 138.9 GB
+12:12:46 PROXY: ninguno
+12:12:46 Proyecto: C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam
+12:12:46 
+Preparando la entrega...
+12:12:46 
+[1/7] Validando el entorno
+12:12:48 $ C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.hackathon\.tools\uv\uv.exe pip check --python C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.venv\Scripts\python.exe
+12:12:48 Checked 57 packages in 4ms
+All installed packages are compatible
+12:12:48 $ C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.venv\Scripts\python.exe -c import pandas, numpy, fastapi, uvicorn, pydantic, strands, boto3, httpx
+12:12:52 
+12:12:52   Pieza              Esperado                            Encontrado      Estado
+12:12:52   -----------------  ----------------------------------  --------------  ------
+12:12:52   uv                 0.11.19                             0.11.19         OK    
+12:12:52   Python (.venv)     3.12.12                             3.12.12         OK    
+12:12:52   Node               v22.23.1                            v22.23.1        OK    
+12:12:52   npm                10.x                                10.9.8          OK    
+12:12:52   Paquetes Python    9 fijos                             9 coinciden     OK    
+12:12:52   Paquetes npm       12 fijos                            12 coinciden    OK    
+12:12:52   pip check          sin conflictos                      sin conflictos  OK    
+12:12:52   Importar paquetes  pandas, fastapi, pydantic, strands  importan        OK    
+12:12:52 
+[2/7] Revisando el README y el stack
+12:12:52     README encontrado
+12:12:53 $ C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.venv\Scripts\python.exe -c import backend.main as m;assert hasattr(m,'app'), 'APP';assert any(getattr(r,'path','')=='/health' for r in m.app.routes), 'HEALTH'
+12:12:55 
+12:12:55     El proyecto sigue el stack del evento
+12:12:55     Rutas del dashboard OK (ninguna empieza con '/')
+12:12:55 
+[3/7] Compilando el dashboard (vite build)
+12:12:55 $ C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.hackathon\.tools\node\node.exe C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\dashboard\node_modules\vite\bin\vite.js build
+12:13:02 [36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32mâœ“[39m 418 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                 [39m[1m[2m  0.38 kB[22m[1m[22m[2m â”‚ gzip:   0.28 kB[22m
+[2mdist/[22m[35massets/index-DhQhdGLe.css  [39m[1m[2m  9.83 kB[22m[1m[22m[2m â”‚ gzip:   2.55 kB[22m
+[2mdist/[22m[36massets/index-CXOI6s5Z.js   [39m[1m[33m569.51 kB[39m[22m[2m â”‚ gzip: 168.52 kB[22m
+[33m
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+[32mâœ“ built in 6.31s[39m
+12:13:02     Dashboard compilado en dashboard/dist
+12:13:02 $ C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.hackathon\.tools\node\node.exe C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\dashboard\node_modules\typescript\bin\tsc --noEmit -p C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\dashboard
+12:13:05 
+12:13:05 
+[4/7] Comprobando el backend (sintaxis e importación)
+12:13:05 $ C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.venv\Scripts\python.exe -m compileall -q backend
+12:13:06 
+12:13:06 $ C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.venv\Scripts\python.exe -c import backend.main
+12:13:08 
+12:13:08     Backend OK (backend.main se importa sin errores)
+12:13:08 
+[5/7] Buscando llaves y credenciales en tus archivos
+12:13:08     Sin credenciales a la vista
+12:13:08 
+[6/7] Empaquetando
+12:13:57 
+[7/7] Verificando el .zip
+12:14:01     152 archivos, 171.1 MB
+12:14:01 
+LISTO. Sube este archivo:
+  C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\entrega-HardRockData-unam-20261120-1212.zip
+12:14:01 FIN con código de salida 0
