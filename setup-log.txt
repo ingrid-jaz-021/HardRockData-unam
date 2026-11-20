@@ -180,3 +180,40 @@ Revisando desviaciones del stack...
 23:51:35 
 RESULTADO: TODO OK, puedes entregar.
 23:51:35 FIN con código de salida 0
+
+===== setup 2026-11-20 10:28:23 =====
+10:28:23 Sistema detectado: windows x64  |  Python del arranque: 3.12.12
+10:28:23 MODO: check  |  versión del script: 2026-11-16  |  argumentos: --check
+10:28:23 SISTEMA: Windows-11-10.0.26300-SP0  |  detectado: windows x64  |  versión: 10.0.26300
+10:28:23 WINDOWS: build 26300  |  administrador: False
+10:28:23 PYTHON: 3.12.12 (C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.venv\Scripts\python.exe)
+10:28:23 USUARIO: ingri  |  carpeta actual: C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam
+10:28:23 PROYECTO: C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam  |  largo de ruta: 70  |  espacios: True  |  no ASCII: False
+10:28:23 DISCO LIBRE: 136.8 GB
+10:28:23 PROXY: ninguno
+10:28:23 Proyecto: C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam
+10:28:23 
+Validando (no se descarga ni instala nada)...
+10:28:31 $ C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.hackathon\.tools\uv\uv.exe pip check --python C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.venv\Scripts\python.exe
+10:28:32 Checked 57 packages in 21ms
+All installed packages are compatible
+10:28:32 $ C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.venv\Scripts\python.exe -c import pandas, numpy, fastapi, uvicorn, pydantic, strands, boto3, httpx
+10:28:44 
+10:28:44   Pieza              Esperado                            Encontrado      Estado
+10:28:44   -----------------  ----------------------------------  --------------  ------
+10:28:44   uv                 0.11.19                             0.11.19         OK    
+10:28:44   Python (.venv)     3.12.12                             3.12.12         OK    
+10:28:44   Node               v22.23.1                            v22.23.1        OK    
+10:28:44   npm                10.x                                10.9.8          OK    
+10:28:44   Paquetes Python    9 fijos                             9 coinciden     OK    
+10:28:44   Paquetes npm       12 fijos                            12 coinciden    OK    
+10:28:44   pip check          sin conflictos                      sin conflictos  OK    
+10:28:44   Importar paquetes  pandas, fastapi, pydantic, strands  importan        OK    
+10:28:44 
+Revisando desviaciones del stack...
+10:28:44 $ C:\Users\ingri\OneDrive\Escritorio\NFL Big Data Bowl\HardRockData-unam\.venv\Scripts\python.exe -c import backend.main as m;assert hasattr(m,'app'), 'APP';assert any(getattr(r,'path','')=='/health' for r in m.app.routes), 'HEALTH'
+10:28:45 
+10:28:45     El proyecto sigue el stack del evento
+10:28:45 
+RESULTADO: TODO OK, puedes entregar.
+10:28:45 FIN con código de salida 0
