@@ -1,4 +1,4 @@
-# HardRockData-unam · ¿Cómo sacarle más a Joe Burrow?
+# Hard Rock Data Unam · Fórmula Burrow: Optimizando cada jugada de los Bengals
 
 Proyecto para el Hackathon NFL Big Data Bowl (UNAM). Es una herramienta web que recomienda qué tipo de jugada ofensiva conviene usar con Joe Burrow, mariscal de campo de los Cincinnati Bengals, según la situación del partido.
 
