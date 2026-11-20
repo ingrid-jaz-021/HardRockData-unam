@@ -154,7 +154,7 @@ function Recomendador() {
     ({ Todas: 'Todas', Corto: 'Corto (≤3)', Medio: 'Medio (4–7)', Largo: 'Largo (≥8)' })[d] ?? d
 
   return (
-    <section className="rounded-lg border-2 bg-white p-5 shadow-sm" style={{ borderColor: NARANJA }}>
+    <section className="rounded-lg bg-white p-5 shadow-sm ring-2" style={{ borderColor: NARANJA, ['--tw-ring-color' as string]: NARANJA }}>
       <h2 className="text-xl font-bold">Recomendador de Jugada Ofensiva para Joe Burrow</h2>
       <p className="mb-4 text-sm text-gray-600">Elige la situación. La recomendación sale de las jugadas reales de Burrow en esa situación.</p>
 
